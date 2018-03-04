@@ -1,23 +1,10 @@
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
-class Solution:
-    def add_data(self, root, x):      
-        curr = root
-        if curr.val==None:
-            curr.val = x
-            root = curr
-            return root
-        while curr.next != None:
-            curr = curr.next
-        
-        curr.next = ListNode(x)
-        
-        return root
-                
+class Solution:           
             
     def numerize(self,x):
         value = 0
@@ -29,11 +16,12 @@ class Solution:
         return value
               
     def reverse(self,x):
-        c = str(x)
-        root = ListNode(None)
-        for i in reversed(c):
+        root = ListNode(int(str(x)[-1]))
+        curr = root
+        for i in reversed(str(x)[:len(str(x))-1]):
             num = int(i)
-            root = self.add_data(root, num)
+            curr.next = ListNode(num)
+            curr = curr.next
         return root
     
     def addTwoNumbers(self, l1, l2):
@@ -43,6 +31,11 @@ class Solution:
         :rtype: ListNode
         """
         total = self.numerize(l1) + self.numerize(l2)
-        result = ListNode(None)
         result = self.reverse(total)
         return result
+        
+def main():
+    return 
+if __name__ == "__main__":
+    main()
+        
