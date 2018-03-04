@@ -5,7 +5,7 @@ class ListNode:
         self.next = None
 
 class Solution:           
-            
+    #transfer the singly-linked list to number        
     def numerize(self,x):
         value = 0
         i = 1
@@ -14,7 +14,7 @@ class Solution:
             x = x.next
             i = i * 10
         return value
-              
+    #transfer number to a singly-linked list          
     def reverse(self,x):
         root = ListNode(int(str(x)[-1]))
         curr = root
@@ -23,7 +23,7 @@ class Solution:
             curr.next = ListNode(num)
             curr = curr.next
         return root
-    
+    #our OG function, which connects two linked list and calculate the new output of the linked list
     def addTwoNumbers(self, l1, l2):
         """
         :type l1: ListNode
